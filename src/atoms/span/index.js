@@ -23,10 +23,23 @@ const Index = (props) => {
           {props.value ? <FacebookIcon /> : null}
         </span>
       );
+    case "vaccinated":
+      return (
+        <span className=" bg-white text-black ml-2">
+          {props.value ? "Vaccinated" : "Not Yet"}
+        </span>
+      );
     case "age":
     case "city":
     default:
-      return <span className=" bg-white text-black ml-1">{props.value}</span>;
+      return (
+        <span
+          className={`bg-white text-black ml-1 ${props.className}`}
+          key={props.key || null}
+        >
+          {props.value}
+        </span>
+      );
   }
 };
 
